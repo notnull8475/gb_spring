@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="postserviceApp">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="script.js"></script>
+    <title>Add product</title>
+</head>
+<body>
+<form ng-submit="submit()" ng-controller="postserviceCtrl">
+    <label for="productId">ID: </label><br/>
+    <input type="number" id="productId" ng-model="product.id" placeholder="{{product.id}}"/><br/>
+    <label for="productName">NAME</label><br/>
+    <input type="text" id="productName" ng-model="product.name" placeholder="{{product.name}}"/> <br/>
+    <label for="productCost">COST</label><br/>
+    <input type="number" id="productCost" ng-model="product.cost" placeholder="{{product.cost}}"/> <br/><br/>
+    <input type="button" value="send" ng-click="postData(product)" />
+    <input type="reset" ng-click="resetForm()" value="Reset"/>
+</form>
+<a href="index.html">Return</a>
+</body>
+</html>

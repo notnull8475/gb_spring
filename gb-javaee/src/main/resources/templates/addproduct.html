@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Product</title>
+</head>
+<body>
+<form th:action="@{'/products/addproduct'}" th:object="${product}" method="post">
+    номер: <input type="number" th:field="*{id}">
+    <br>
+    Наименование: <input type="text" th:field="*{title}"/>
+    <br>
+    цена: <input type="number" th:field="*{cost}"/>
+    <br>
+    <button type="submit">Добавить</button>
+</form>
+<a href="/products">Вернуться</a>
+</body>
+</html>
