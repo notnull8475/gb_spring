@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/hibernate/pom.xml" />
         <option value="$PROJECT_DIR$/gb-javaee/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot/pom.xml" />
+        <option value="$PROJECT_DIR$/hibernate2/pom.xml" />
       </list>
     </option>
   </component>
