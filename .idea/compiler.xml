@@ -7,8 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="hibernate" />
         <module name="spring-boot" />
+        <module name="hibernate" />
+        <module name="hibernate2" />
         <module name="gb-spring" />
       </profile>
     </annotationProcessing>
