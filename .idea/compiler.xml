@@ -10,6 +10,7 @@
         <module name="spring-boot" />
         <module name="hibernate" />
         <module name="hibernate2" />
+        <module name="springdata" />
         <module name="gb-spring" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="gb-spring" options="-parameters" />
       <module name="spring-boot" options="-parameters" />
+      <module name="springdata" options="-parameters" />
     </option>
   </component>
 </project>
