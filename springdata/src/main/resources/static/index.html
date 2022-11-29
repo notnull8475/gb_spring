@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="productApp">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="script.js"></script>
+    <title>Product list</title>
+</head>
+<body>
+
+<div class="container" ng-controller="indexController">
+    <h1 class="information">Product list</h1>
+    <div>
+        Pages:
+        <button class="btn btn-primary" ng-click="prevPage()"> - </button>
+        <h2>{{pageVar}}</h2>
+        <button class="btn btn-primary" ng-click="nextPage()"> + </button>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">PRICE</th>
+            <th scope="col">DELETE</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="p in ProductList">
+            <th scope="row">{{p.id}}</th>
+            <td>{{p.title}}</td>
+            <td>
+                <button class="btn btn-info" ng-click="changeCost(p.id,-5)">-</button>
+                {{p.price}}
+                <button class="btn btn-info" ng-click="changeCost(p.id,5)">+</button>
+            </td>
+            <td>
+                <button class="btn btn-warning" ng-click="deleteProduct(p.id)">DELETE</button>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <form novalidate ng-submit="submit()">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">TITLE</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                   id="productName" ng-model="product.title"
+                   placeholder="{{product.title}}">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">PRICE</span>
+            </div>
+            <input type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                   id="productPrice" ng-model="product.price"
+                   placeholder="{{product.price}}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">SAVE</button>
+        <!--        <input type="button" value="СОХРАНИТЬ" ng-click="postData(product)"/>-->
+    </form>
+</div>
+</body>
+</html>

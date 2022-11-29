@@ -1,6 +1,8 @@
 package ru.gb.springdata.service;
 
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.gb.springdata.model.Product;
 import ru.gb.springdata.repository.ProductRepository;
 
@@ -29,5 +31,15 @@ public class ProductService {
 
     public void deleteProduct(long id) {
         repository.deleteById(id);
+    }
+
+    @Transactional
+    public void changePrice(int productId, int delta) {
+        Product p = getProduct(productId);
+        p.setPrice(p.getPrice() + delta);
+    }
+
+    public List<Product> getProductListOfRows(int rowsNumber, int page) {
+        return repository.findAll(PageRequest.of(page,rowsNumber)).getContent();
     }
 }
