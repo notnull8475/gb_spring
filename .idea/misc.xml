@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/gb-javaee/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot/pom.xml" />
         <option value="$PROJECT_DIR$/hibernate2/pom.xml" />
+        <option value="$PROJECT_DIR$/springdata/pom.xml" />
       </list>
     </option>
   </component>
