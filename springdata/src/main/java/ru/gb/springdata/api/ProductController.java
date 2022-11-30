@@ -22,11 +22,14 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
+    @GetMapping("/list")
+    public List<Product> getProductsListOfRows(@RequestParam int rowsNumber, @RequestParam int page){
+        return  productService.getProductListOfRows(rowsNumber, page);
+    }
+
     @GetMapping("/{id}")
     public Product getProduct(@PathVariable Long id) {
-        Product product =  productService.getProduct(id);
-        System.out.println(product);
-        return product;
+        return productService.getProduct(id);
     }
 
     @PostMapping
@@ -40,4 +43,8 @@ public class ProductController {
     }
 
 
+    @GetMapping("/change_price")
+    public void changePrice(@RequestParam int productId, @RequestParam String delta) {
+        productService.changePrice(productId, Integer.parseInt(delta));
+    }
 }
