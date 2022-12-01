@@ -31,5 +31,10 @@
         <addPrimaryKey tableName="product" columnNames="id" constraintName="customer.pk"/>
     </changeSet>
     
+    <changeSet id="product.time" author="dinar">
+        <addColumn tableName="product">
+            <column name="create_time" type="timestamp"/>
+        </addColumn>
+    </changeSet>
 
 </databaseChangeLog>
