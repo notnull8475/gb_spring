@@ -25,9 +25,9 @@ public class ProductController {
             @RequestParam(name = "max_price", required = false) Long maxPrice,
             @RequestParam(name = "title_part", required = false) String titlePart
     ) {
-        if (rows<0) rows = 5;
-        if (page<0) page = 1;
-        return productService.getProducts(rows,page,minPrice,maxPrice,titlePart);
+        if (rows < 0) rows = 5;
+        if (page < 0) page = 1;
+        return productService.getProducts(rows, page, minPrice, maxPrice, titlePart);
     }
 
     @GetMapping("/{id}")
@@ -36,12 +36,13 @@ public class ProductController {
     }
 
     @PostMapping
-    public void create(@RequestBody ProductDto productDto) {
-        productService.saveProduct(productDto);
+    public ProductDto create(@RequestBody ProductDto productDto) {
+        return new ProductDto(productService.save(productDto));
     }
+
     @PutMapping
-    public void update(@RequestBody ProductDto productDto) {
-        productService.saveProduct(productDto);
+    public ProductDto update(@RequestBody ProductDto productDto) {
+        return new ProductDto(productService.update(productDto));
     }
 
     @DeleteMapping("/{id}")
