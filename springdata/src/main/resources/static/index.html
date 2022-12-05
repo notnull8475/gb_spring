@@ -54,6 +54,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">NAME</th>
                     <th scope="col">PRICE</th>
+                    <th scope="col">ADD TO CART</th>
                     <th scope="col">DELETE</th>
                 </tr>
                 </thead>
@@ -62,9 +63,12 @@
                     <th scope="row">{{p.id}}</th>
                     <td>{{p.title}}</td>
                     <td>
-                        <button class="btn btn-info" ng-click="changeCost(p.id,-5)">-</button>
+                        <!--                        <button class="btn btn-info" ng-click="changeCost(p.id,-5)">-</button>-->
                         {{p.price}}
-                        <button class="btn btn-info" ng-click="changeCost(p.id,5)">+</button>
+                        <!--                        <button class="btn btn-info" ng-click="changeCost(p.id,5)">+</button>-->
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" ng-click="addToCart(p.id)">ADD TO CART</button>
                     </td>
                     <td>
                         <button class="btn btn-warning" ng-click="deleteProduct(p.id)">DELETE</button>
@@ -85,7 +89,45 @@
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
-            </ul> <p>Всего страниц: {{allPages}}</p>
+            </ul>
+            <p>Всего страниц: {{allPages}}</p>
+        </div>
+    </div>
+    <div class="row g-0">
+        <div class="col-6">
+            <h2>Корзина</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">PRICE</th>
+                    <th scope="col">COUNT</th>
+                    <th scope="col">DELETE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="cpd in CartProductList">
+                    <th scope="row">{{cpd.productId}}</th>
+                    <td>{{cpd.title}}</td>
+                    <td>
+                        {{cpd.price}}
+                    </td>
+                    <td>
+                        <button class="btn btn-info" ng-click="changeCountInCart(cpd.productId,-1)">-</button>
+                        {{cpd.count}}
+                        <button class="btn btn-info" ng-click="changeCountInCart(cpd.productId,+1)">+</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-warning" ng-click="deleteProductFromCount(cpd.productId)">DELETE FROM CART</button>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-6">
+            <h2>Добавить продукт</h2>
             <form novalidate ng-submit="submit()">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
