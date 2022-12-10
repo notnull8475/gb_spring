@@ -69,7 +69,7 @@ public class SecurityConfig {
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.debug(true)
                 .ignoring()
-                .antMatchers("/bootstrap/**","/css/**", "/js/**", "/img/**", "/lib/**", "/favicon.ico", "/bootstrap/**", "/h2-console/**", "*.xsd");
+                .antMatchers("/css/**", "/js/**", "/img/**", "/lib/**", "/favicon.ico", "/bootstrap/**", "/h2-console/**", "*.xsd");
     }
 
 //    @Bean
