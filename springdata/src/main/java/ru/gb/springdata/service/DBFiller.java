@@ -2,6 +2,7 @@ package ru.gb.springdata.service;
 
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import ru.gb.springdata.model.AppRole;
 import ru.gb.springdata.model.AppUser;
@@ -58,32 +59,32 @@ public class DBFiller {
 
     private List<AppUser> fillUsers(List<AppRole> roles) {
         List<AppUser> users = new ArrayList<>();
-
+        BCryptPasswordEncoder crypt = new BCryptPasswordEncoder();
         AppUser userUser = new AppUser();
         userUser.setUsername("USER");
         userUser.setEnabled(true);
-        userUser.setPassword("user");
+        userUser.setPassword(crypt.encode("user"));
         userUser.setAppRoles(Collections.singletonList(roles.stream().filter(r -> r.getName().equals("USER")).findFirst().get()));
         users.add(userUser);
 
         AppUser managerUser = new AppUser();
         managerUser.setUsername("MANAGER");
         managerUser.setEnabled(true);
-        managerUser.setPassword("manager");
+        managerUser.setPassword(crypt.encode("manager"));
         managerUser.setAppRoles(Collections.singletonList(roles.stream().filter(r -> r.getName().equals("MANAGER")).findFirst().get()));
         users.add(managerUser);
 
         AppUser adminUser = new AppUser();
         adminUser.setUsername("ADMIN");
         adminUser.setEnabled(true);
-        adminUser.setPassword("admin");
+        adminUser.setPassword(crypt.encode("admin"));
         adminUser.setAppRoles(Collections.singletonList(roles.stream().filter(r -> r.getName().equals("ADMIN")).findFirst().get()));
         users.add(adminUser);
 
         AppUser rootUser = new AppUser();
         rootUser.setUsername("ROOT");
         rootUser.setEnabled(true);
-        rootUser.setPassword("root");
+        rootUser.setPassword(crypt.encode("root"));
         rootUser.setAppRoles(Collections.singletonList(roles.stream().filter(r -> r.getName().equals("ROOT")).findFirst().get()));
         users.add(rootUser);
 

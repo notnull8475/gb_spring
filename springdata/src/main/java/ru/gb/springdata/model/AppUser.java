@@ -1,18 +1,13 @@
 package ru.gb.springdata.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Collection;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Entity(name = "users")
+@Entity
+@Table(name = "users")
 public class AppUser {
 
     @Id
@@ -21,17 +16,17 @@ public class AppUser {
     private Long id;
     @Column(name = "username")
     private String username;
-    @Column(name = "enabled")
-    private boolean enabled;
     @Column(name = "encrypted_password")
     private String password;
+    @Column(name = "enabled")
+    private boolean enabled;
 
     @ManyToMany
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    private List<AppRole> appRoles;
+    private Collection<AppRole> appRoles;
 
 
 }

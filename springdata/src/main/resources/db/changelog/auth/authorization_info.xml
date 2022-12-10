@@ -2,44 +2,46 @@
 <databaseChangeLog
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
-        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
-		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
-		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+		https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.1.xsd">
 
     <changeSet id="product" author="dinar">
         <sql>
-            create table users(
-                id bigserial not null primary key ,
-                username varchar(255) not null,
-                enabled boolean default true,
-                encrypted_password text not null
+            create table users
+            (
+                id                 bigserial    not null primary key,
+                username           varchar(255) not null,
+                enabled            boolean default true,
+                encrypted_password text         not null
             );
         </sql>
         <sql>
-            alter table users add constraint USERS_UK unique (username);
+            alter table users
+                add constraint USERS_UK unique (username);
         </sql>
         <sql>
-            create table roles(
-                id bigserial not null primary key,
+            create table roles
+            (
+                id        bigserial    not null primary key,
                 role_name varchar(255) not null
             );
         </sql>
         <sql>
-            alter table roles add constraint ROLES_UK unique (role_name);
+            alter table roles
+                add constraint ROLES_UK unique (role_name);
         </sql>
         <sql>
-            create table users_roles(
-                user_id bigint not null ,
+            create table users_roles
+            (
+                user_id bigint not null,
                 role_id bigint not null,
-                foreign key (user_id) references users(id),
-                foreign key (role_id) references roles(id)
+                foreign key (user_id) references users (id),
+                foreign key (role_id) references roles (id)
             );
         </sql>
         <sql>
-            alter table users_roles add constraint unique (user_id,role_id);
+            alter table users_roles
+                add constraint unique (user_id, role_id);
         </sql>
     </changeSet>
 

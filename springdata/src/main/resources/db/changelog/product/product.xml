@@ -2,12 +2,8 @@
 <databaseChangeLog
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
-        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
-		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
-		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+		https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.1.xsd">
 
     <changeSet id="product" author="gizzatulin">
         <preConditions>
@@ -30,7 +26,7 @@
     <changeSet id="customer.pk" author="gizzatulin">
         <addPrimaryKey tableName="product" columnNames="id" constraintName="customer.pk"/>
     </changeSet>
-    
+
     <changeSet id="product.time" author="dinar">
         <addColumn tableName="product">
             <column name="create_time" type="timestamp"/>

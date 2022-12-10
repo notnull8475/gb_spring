@@ -4,13 +4,20 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password:
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/security
+#    username: security
+#    password: security
   jpa:
     show-sql: true
     database-platform: org.hibernate.dialect.H2Dialect
-#    hibernate:
-#      ddl-auto: create
+    hibernate:
+      ddl-auto: create-drop
   h2:
     console:
       enabled: true
-  liquibase:
-    change-log: classpath:/db/changelog/db.changelog-master.xml
+#  liquibase:
+#    change-log: classpath:db/changelog/db.changelog-master.xml
+#    parameters:
+#      SECURE_PARSING: false
