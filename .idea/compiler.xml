@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="security-jwt" />
         <module name="spring-boot" />
         <module name="hibernate" />
         <module name="hibernate2" />
@@ -15,6 +16,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring-jwt" target="17" />
       <module name="thymeleaf" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -22,6 +24,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="gb-spring" options="-parameters" />
       <module name="spring-boot" options="-parameters" />
+      <module name="spring-jwt" options="-parameters" />
       <module name="springdata" options="-parameters" />
       <module name="thymeleaf" options="-parameters" />
     </option>
