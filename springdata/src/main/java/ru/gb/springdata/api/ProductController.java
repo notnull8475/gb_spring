@@ -17,6 +17,7 @@ public class ProductController {
     }
 
 
+    @PatchMapping
     @GetMapping
     public Page<ProductDto> getProducts(
             @RequestParam(name = "rows", required = false, defaultValue = "5") int rows,
