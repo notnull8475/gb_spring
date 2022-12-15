@@ -23,6 +23,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="gb-spring" options="-parameters" />
+      <module name="security-jwt" options="-parameters" />
       <module name="spring-boot" options="-parameters" />
       <module name="spring-jwt" options="-parameters" />
       <module name="springdata" options="-parameters" />
