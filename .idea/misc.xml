@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/hibernate2/pom.xml" />
         <option value="$PROJECT_DIR$/springdata/pom.xml" />
         <option value="$PROJECT_DIR$/security-jwt/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringSecurityMVC/pom.xml" />
       </list>
     </option>
   </component>

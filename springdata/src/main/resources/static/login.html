@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="bootstrap/css/bootstrap.css">
+    <script src="js/angular.js"></script>
+    <script src="js/script.js"></script>
+    <title>AUTHORIZATION</title>
+</head>
+<body>
+<div class="container"  ng-app="authApp">
+    <!--AUTH FORM START-->
+    <div class="offset-3 col-6">
+        <form novalidate ng-submit="auth()">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" style="color: #0a53be">LOGIN</span>
+                </div>
+                <input type="text" class="form-control " aria-describedby="inputGroup-sizing-default"
+                       id="username" ng-model="appUser.username"
+                       placeholder="{{appUser.username}}">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">PASSWORD</span>
+                </div>
+                <input type="password" class="form-control" aria-describedby="inputGroup-sizing-default"
+                       id="password" ng-model="appUser.password"
+                       placeholder="{{appUser.password}}">
+            </div>
+
+            <button type="submit" class="btn btn-primary">SIGN IN</button>
+            <!--        <input type="button" value="СОХРАНИТЬ" ng-click="postData(product)"/>-->
+        </form>
+    </div>
+    <!--AUTH FORM STOP-->
+
+</div>
+</body>
+</html>
