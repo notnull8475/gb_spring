@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/springdata/pom.xml" />
         <option value="$PROJECT_DIR$/SpringSecurityMVC/pom.xml" />
         <option value="$PROJECT_DIR$/security-jwt/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-ws/pom.xml" />
       </list>
     </option>
   </component>

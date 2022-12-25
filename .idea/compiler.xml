@@ -14,6 +14,7 @@
         <module name="spring-boot" />
         <module name="hibernate" />
         <module name="gb-spring" />
+        <module name="spring-ws" />
       </profile>
     </annotationProcessing>
   </component>
@@ -23,6 +24,7 @@
       <module name="gb-spring" options="-parameters" />
       <module name="security-jwt" options="-parameters" />
       <module name="spring-boot" options="-parameters" />
+      <module name="spring-ws" options="-parameters" />
       <module name="springdata" options="-parameters" />
     </option>
   </component>
