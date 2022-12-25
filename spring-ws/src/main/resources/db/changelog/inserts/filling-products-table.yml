@@ -1,0 +1,59 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-products-to-table
+      author: Dinar
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: title
+                  value: product1
+              - column:
+                  name: price
+                  value: 12341
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: title
+                  value: product2
+              - column:
+                  name: price
+                  value: 12342
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: title
+                  value: product3
+              - column:
+                  name: price
+                  value: 12343
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: title
+                  value: product4
+              - column:
+                  name: price
+                  value: 12344
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: title
+                  value: product5
+              - column:
+                  name: price
+                  value: 12345
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: title
+                  value: product6
+              - column:
+                  name: price
+                  value: 12346
