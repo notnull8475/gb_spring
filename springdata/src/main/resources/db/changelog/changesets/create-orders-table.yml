@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-orders-table
+      author: Dinar
+      changes:
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    referencedTableName: users
+                    foreignKeyName: fk_orders_users
+                    referencedColumnNames: id
+              - column:
+                  name: price
+                  type: bigint
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueComputed: current_timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValueComputed: current_timestamp

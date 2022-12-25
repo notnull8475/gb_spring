@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changesets/create-users-table.yml
+  - include:
+      file: db/changelog/changesets/create-roles-table.yml
+  - include:
+      file: db/changelog/changesets/create-users-roles-table.yml
+  - include:
+      file: db/changelog/changesets/create-products-table.yml
+  - include:
+      file: db/changelog/changesets/create-orders-table.yml
+  - include:
+      file: db/changelog/changesets/create-orders-items-table.yml
+  - include:
+      file: db/changelog/inserts/filling-roles-table.yml
