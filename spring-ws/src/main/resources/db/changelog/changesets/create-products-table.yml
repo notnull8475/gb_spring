@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      author: dinar
+      id: products_1
+      changes:
+        - createTable:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: bigint
+                  constraints:
+                    nullable: false
